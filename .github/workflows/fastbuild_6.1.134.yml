@@ -364,7 +364,6 @@ jobs:
         run: |
           echo "正在添加Droidspaces补丁…"
           cd kernel_workspace
-          git clone --depth=1 https://github.com/$GITHUB_REPOSITORY.git -b $GITHUB_REF_NAME $GITHUB_ACTOR
           cp ./$GITHUB_ACTOR/other_patch/01.6.1+_disable_crc_checks_for_lkms.patch ./common/
           cp ./$GITHUB_ACTOR/other_patch/01.disable_crc_checks_for_lkms.patch ./common/
           cp ./$GITHUB_ACTOR/other_patch/02.fix_restore_cgroup_file_prefix_handling.patch ./common/
