@@ -1,4 +1,4 @@
-name: 加速版构建 6.1.134 (天玑特供)欧加真OKI内核
+04.use_android_abi_padding_for_sysvipc_task_struct.patchname: 加速版构建 6.1.134 (天玑特供)欧加真OKI内核
 
 env:
   TZ: Asia/Shanghai
@@ -369,7 +369,7 @@ jobs:
           cp ./$GITHUB_ACTOR/other_patch/02.fix_restore_cgroup_file_prefix_handling.patch ./common/
           cp ./$GITHUB_ACTOR/other_patch/03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patch ./common/
           cp ./$GITHUB_ACTOR/other_patch/03.5.15+_use_android_abi_padding_for_posix_mqueue.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/04.use_android_abi_padding_for_sysvipc_task_struct.patch_copy.patch ./common/
+          cp ./$GITHUB_ACTOR/other_patch/04.use_android_abi_padding_for_sysvipc_task_struct.patch ./common/
           cd ./common
           patch -p1 < 01.6.1+_disable_crc_checks_for_lkms.patch
           patch -p1 < 01.disable_crc_checks_for_lkms.patch || true
