@@ -372,11 +372,11 @@ jobs:
           cp ./$GITHUB_ACTOR/other_patch/04.use_android_abi_padding_for_sysvipc_task_struct.patch ./common/
           cd ./common
           patch -p1 < 01.6.1+_disable_crc_checks_for_lkms.patch
-          patch -p1 < 01.disable_crc_checks_for_lkms.patch || true
-          patch -p1 < 02.fix_restore cgroup_file_prefix_handling.patch || true
-          patch -p1 < 03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patc || true
-          patch -p1 < 03.5.15+_use_android_abi_padding_for_posix_mqueue.patch || true
-          patch -p1 < 04.use_android_abi_padding_for_sysvipc_task_struct.patch || true
+          patch -p1 < 01.disable_crc_checks_for_lkms.patch
+          patch -p1 < 02.fix_restore cgroup_file_prefix_handling.patch
+          patch -p1 < 03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patc
+          patch -p1 < 03.5.15+_use_android_abi_padding_for_posix_mqueue.patch
+          patch -p1 < 04.use_android_abi_padding_for_sysvipc_task_struct.patch
 
       - name: 应用 lz4kd 补丁
         if: inputs.lz4kd_enable
