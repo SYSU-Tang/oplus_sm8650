@@ -1,4 +1,4 @@
-04.use_android_abi_padding_for_sysvipc_task_struct.patchname: 加速版构建 6.1.134 (天玑特供)欧加真OKI内核
+name: 加速版构建 6.1.134 (天玑特供)欧加真OKI内核
 
 env:
   TZ: Asia/Shanghai
