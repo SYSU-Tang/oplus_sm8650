@@ -360,23 +360,23 @@ jobs:
           git apply -p1 < 001-lz4.patch || true
           patch -p1 < 002-zstd.patch || true
 
-      - name: 应用Droidspaces补丁
-        run: |
-          echo "正在添加Droidspaces补丁…"
-          cd kernel_workspace
-          cp ./$GITHUB_ACTOR/other_patch/01.6.1+_disable_crc_checks_for_lkms.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/01.disable_crc_checks_for_lkms.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/02.fix_restore_cgroup_file_prefix_handling.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/03.5.15+_use_android_abi_padding_for_posix_mqueue.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/04.use_android_abi_padding_for_sysvipc_task_struct.patch ./common/
-          cd ./common
-          patch -p1 < 01.6.1+_disable_crc_checks_for_lkms.patch
-          patch -p1 < 01.disable_crc_checks_for_lkms.patch
-          patch -p1 < 02.fix_restore cgroup_file_prefix_handling.patch
-          patch -p1 < 03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patch
-          patch -p1 < 03.5.15+_use_android_abi_padding_for_posix_mqueue.patch
-          patch -p1 < 04.use_android_abi_padding_for_sysvipc_task_struct.patch
+      # - name: 应用Droidspaces补丁
+      #   run: |
+      #     echo "正在添加Droidspaces补丁…"
+      #     cd kernel_workspace
+      #     cp ./$GITHUB_ACTOR/other_patch/01.6.1+_disable_crc_checks_for_lkms.patch ./common/
+      #     cp ./$GITHUB_ACTOR/other_patch/01.disable_crc_checks_for_lkms.patch ./common/
+      #     cp ./$GITHUB_ACTOR/other_patch/02.fix_restore_cgroup_file_prefix_handling.patch ./common/
+      #     cp ./$GITHUB_ACTOR/other_patch/03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patch ./common/
+      #     cp ./$GITHUB_ACTOR/other_patch/03.5.15+_use_android_abi_padding_for_posix_mqueue.patch ./common/
+      #     cp ./$GITHUB_ACTOR/other_patch/04.use_android_abi_padding_for_sysvipc_task_struct.patch ./common/
+      #     cd ./common
+      #     patch -p1 < 01.6.1+_disable_crc_checks_for_lkms.patch
+      #     patch -p1 < 01.disable_crc_checks_for_lkms.patch
+      #     patch -p1 < 02.fix_restore cgroup_file_prefix_handling.patch
+      #     patch -p1 < 03.5.10_or_lower_use_android_abi_padding_for_posix_mqueue_copy.patch
+      #     patch -p1 < 03.5.15+_use_android_abi_padding_for_posix_mqueue.patch
+      #     patch -p1 < 04.use_android_abi_padding_for_sysvipc_task_struct.patch
 
       - name: 应用 lz4kd 补丁
         if: inputs.lz4kd_enable
